@@ -4,7 +4,7 @@ body {
   background-color: white;
 }
 
-#form_1 {
+#input_field {
   display: flex;
   justify-content: left;
   padding-top: 40px;
