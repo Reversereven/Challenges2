@@ -13,7 +13,19 @@ document.getElementById("button").onclick = function() {
   //フォームの値を取得する
   var input_number =document.getElementById("input_number").value;
 
+  //取得した文字列を数値へ変換する
+  var execution_number =parseInt(input_number, 10);
 
-  display.innerHTML =parseInt(input_number, 10)*(rand);
+  // var n = 1;
+  // while (n < 3){
+  //   display.innerHTML =(rand);
+  //   n++;
+  // }
 
-}
+  var n = 1;
+  while (n < 3){
+    console.log(rand);
+    n++;
+  }
+
+};
