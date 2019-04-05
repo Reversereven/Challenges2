@@ -16,15 +16,9 @@ document.getElementById("button").onclick = function() {
   //取得した文字列を数値へ変換する
   var execution_number =parseInt(input_number, 10);
 
-  // var n = 1;
-  // while (n < 3){
-  //   display.innerHTML =(rand);
-  //   n++;
-  // }
-
   var n = 1;
-  while (n < 3){
-    console.log(rand);
+  while (n < execution_number){
+    display.innerHTML =(rand);
     n++;
   }
 
