@@ -16,10 +16,17 @@ document.getElementById("button").onclick = function() {
   //取得した文字列を数値へ変換する
   var execution_number =parseInt(input_number, 10);
 
-  var n = 1;
+  var numbers = [];
+
+  var n = 0;
+
   while (n < execution_number){
-    display.innerHTML =(rand);
+    numbers.push(rand);
     n++;
   }
+
+  console.log(numbers);
+
+  // display.write(numbers);
 
 };
