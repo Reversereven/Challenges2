@@ -170,24 +170,24 @@ document.getElementById("button").onclick = function() {
     i++;
   }
 
-  var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  var r = 0;
+  // var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var r = 1;
 
   while (r < 10){
     // セルに各数値を表示する
-    if ("numberRange_line_"+ a[r].length > 0){
+    if (("numberRange_line_"+ r).length > 0){
       // 生成された数
-      document.getElementById("generateNumber_line_"+ a[r]).innerHTML = "numberRange_line_"+ a[r];
+      document.getElementById("generateNumber_line_"+ r).innerHTML = eval("numberRange_line_"+ r);
       // 最小値
-      document.getElementById("min_line_"+ a[r]).innerHTML =Math.min.apply(null,"numberRange_line_"+ a[r]);
+      document.getElementById("min_line_"+ r).innerHTML =Math.min.apply(null, eval("numberRange_line_"+ r));
       // 最大値
-      document.getElementById("max_line_"+ a[r]).innerHTML =Math.max.apply(null,"numberRange_line_"+ a[r]);
+      document.getElementById("max_line_"+ r).innerHTML =Math.max.apply(null, eval("numberRange_line_"+ r));
       // 個数
-      document.getElementById("length_"+ a[r]).innerHTML ="numberRange_line_".length;
+      document.getElementById("length_"+ r).innerHTML ="numberRange_line_".length;
       // 平均
-      document.getElementById("ave_"+ a[r]).innerHTML =(Math.floor(sum1 /"numberRange_line_"+ a[r].length));
+      document.getElementById("ave_"+ r).innerHTML =(Math.floor(sum1 /"numberRange_line_"+ r.length));
       // 合計
-      document.getElementById("sum_"+ a[r]).innerHTML ="sum" + a[r];
+      document.getElementById("sum_"+ r).innerHTML ="sum" + r;
     } else {
       // 配列が空の時に””を表示する処理
       document.getElementById("generateNumber_line_" + r).innerHTML ="";
