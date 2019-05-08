@@ -170,53 +170,27 @@ document.getElementById("button").onclick = function() {
     i++;
   }
 
-  int [][] generateNumber = new int[10][];
+  var generateNumbers = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+  ];
 
   var j = 0;
-  while (j < 10){
-    generateNumber[j] = new int[] {"generateNumber_line_"+ j};
+  var r = 1;
+  while (j > 10){
+    generateNumbers[j].push("numberRange_line_"+ r);
     j++;
   }
 
-  if (("numberRange_line_1").length > 0){
-    document.getElementById("generateNumber_line_1").innerHTML ="numberRange_line_1";
-  } else {
-    document.getElementById("generateNumber_line_1").innerHTML ="";
-  }
-
-
-
-
-  // var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  // var r = 1;
-  //
-  // while (r < 10){
-  //   // セルに各数値を表示する
-  //   if (("numberRange_line_"+ r).length > 0){
-  //     // 生成された数
-  //     document.getElementById("generateNumber_line_"+ r).innerHTML ="numberRange_line_"+ r;
-  //     // 最小値
-  //     document.getElementById("min_line_"+ r).innerHTML =Math.min.apply(null,"numberRange_line_"+ r);
-  //     // 最大値
-  //     document.getElementById("max_line_"+ r).innerHTML =Math.max.apply(null,"numberRange_line_"+ r);
-  //     // 個数
-  //     document.getElementById("length_"+ r).innerHTML ="numberRange_line_"+ r.length;
-  //     // 平均
-  //     document.getElementById("ave_"+ r).innerHTML =(Math.floor(sum1 /"numberRange_line_"+ r.length));
-  //     // 合計
-  //     document.getElementById("sum_"+ r).innerHTML ="sum" + r;
-  //   } else {
-  //     // 配列が空の時に””を表示する処理
-  //     document.getElementById("generateNumber_line_" + r).innerHTML ="";
-  //     document.getElementById("min_line_" + r).innerHTML ="";
-  //     document.getElementById("max_line_" + r).innerHTML ="";
-  //     document.getElementById("length_" + r).innerHTML ="";
-  //     document.getElementById("ave_" + r).innerHTML ="";
-  //     document.getElementById("sum_" + r).innerHTML ="";
-  //
-  //     r++;
-  //   }
-  // }
+  console.log(generateNumbers);
 
   //
   // // セルに各数値を表示する
