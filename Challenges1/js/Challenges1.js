@@ -184,15 +184,15 @@ document.getElementById("button").onclick = function() {
   ];
 
   var j = 0;
-  var r = 1;
-  while (j > 10){
-    generateNumbers[j].push("numberRange_line_"+ r);
+
+  while ( j > 10){
+    generateNumbers[j].concat("numberRange_line_"+ j + 1);
     j++;
   }
 
   console.log(generateNumbers);
 
-  //
+
   // // セルに各数値を表示する
   // if (numberRange_line_1.length > 0){
   //   // 生成された数
