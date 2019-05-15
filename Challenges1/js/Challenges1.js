@@ -107,123 +107,124 @@ document.getElementById("button").onclick = function() {
     return (element <= 99);
   })
 
-
-  // 行ごとに新しく作られた配列の中身をwhile文で合計する
-  var i = 0;
-  var sum1 = 0;
-  while (i < numberRange_line_1.length){
-    sum1 += numberRange_line_1[i];
-    i++;
-  }
-  var i = 0;
-  var sum2 = 0;
-  while (i < numberRange_line_2.length){
-    sum2 += numberRange_line_2[i];
-    i++;
-  }
-  var i = 0;
-  var sum3 = 0;
-  while (i < numberRange_line_3.length){
-    sum3 += numberRange_line_3[i];
-    i++;
-  }
-  var i = 0;
-  var sum4 = 0;
-  while (i < numberRange_line_4.length){
-    sum4 += numberRange_line_4[i];
-    i++;
-  }
-  var i = 0;
-  var sum5 = 0;
-  while (i < numberRange_line_5.length){
-    sum5 += numberRange_line_5[i];
-    i++;
-  }
-  var i = 0;
-  var sum6 = 0;
-  while (i < numberRange_line_6.length){
-    sum6 += numberRange_line_6[i];
-    i++;
-  }
-  var i = 0;
-  var sum7 = 0;
-  while (i < numberRange_line_7.length){
-    sum7 += numberRange_line_7[i];
-    i++;
-  }
-  var i = 0;
-  var sum8 = 0;
-  while (i < numberRange_line_8.length){
-    sum8 += numberRange_line_8[i];
-    i++;
-  }
-  var i = 0;
-  var sum9 = 0;
-  while (i < numberRange_line_9.length){
-    sum9 += numberRange_line_9[i];
-    i++;
-  }
-  var i = 0;
-  var sum10 = 0;
-  while (i < numberRange_line_10.length){
-    sum10 += numberRange_line_10[i];
-    i++;
-  }
-
-  console.log(numberRange_line_1);
-
-  var generateNumbers = [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
+  const numberRange_line = [
+    numberRange_line_1,numberRange_line_2,
+    numberRange_line_3,numberRange_line_4,
+    numberRange_line_5,numberRange_line_6,
+    numberRange_line_7,numberRange_line_8,
+    numberRange_line_9,numberRange_line_10
   ];
 
-  var j = 0;
-  console.log("j", j);
+  console.log(numberRange_line);
 
-  while ( j < 10){
-  console.log("j", j);
-  var a = "numberRange_line_" + ( j + 1 );
-  generateNumbers[j].concat(a);
-  console.log(a);
-    j++;
+  const sum_line = [
+    [],[],[],[],[],[],[],[],[],[]
+  ]
+
+  var sum = 0;
+  var a = 0;
+
+  for (var i = 0; i < 10; i++){
+    while (a < numberRange_line[i].length){
+      sum += numberRange_line[i][a];
+      console.log(sum);
+      a++;
+    }
+    sum_line[i].push(sum);
   }
-  console.log("j", j);
-  console.log(generateNumbers);
 
-
-
-  // // セルに各数値を表示する
-  // if (numberRange_line_1.length > 0){
-  //   // 生成された数
-  //   document.getElementById("generateNumber_line_1").innerHTML = numberRange_line_1;
-  //   // 最小値
-  //   document.getElementById("min_line_1").innerHTML =Math.min.apply(null,numberRange_line_1);
-  //   // 最大値
-  //   document.getElementById("max_line_1").innerHTML =Math.max.apply(null,numberRange_line_1);
-  //   // 個数
-  //   document.getElementById("length_1").innerHTML =numberRange_line_1.length;
-  //   // 平均
-  //   document.getElementById("ave_1").innerHTML =(Math.floor(sum1 /numberRange_line_1.length));
-  //   // 合計
-  //   document.getElementById("sum_1").innerHTML =sum1;
-  // } else {
-  //   // 配列が空の時に””を表示する処理
-  //   document.getElementById("generateNumber_line_1").innerHTML ="";
-  //   document.getElementById("min_line_1").innerHTML ="";
-  //   document.getElementById("max_line_1").innerHTML ="";
-  //   document.getElementById("length_1").innerHTML ="";
-  //   document.getElementById("ave_1").innerHTML ="";
-  //   document.getElementById("sum_1").innerHTML ="";
-  // }
   //
+  //
+  //
+  // // 行ごとに新しく作られた配列の中身をwhile文で合計する
+  // var i = 0;
+  // var sum1 = 0;
+  // while (i < numberRange_line_1.length){
+  //   sum1 += numberRange_line_1[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum2 = 0;
+  // while (i < numberRange_line_2.length){
+  //   sum2 += numberRange_line_2[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum3 = 0;
+  // while (i < numberRange_line_3.length){
+  //   sum3 += numberRange_line_3[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum4 = 0;
+  // while (i < numberRange_line_4.length){
+  //   sum4 += numberRange_line_4[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum5 = 0;
+  // while (i < numberRange_line_5.length){
+  //   sum5 += numberRange_line_5[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum6 = 0;
+  // while (i < numberRange_line_6.length){
+  //   sum6 += numberRange_line_6[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum7 = 0;
+  // while (i < numberRange_line_7.length){
+  //   sum7 += numberRange_line_7[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum8 = 0;
+  // while (i < numberRange_line_8.length){
+  //   sum8 += numberRange_line_8[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum9 = 0;
+  // while (i < numberRange_line_9.length){
+  //   sum9 += numberRange_line_9[i];
+  //   i++;
+  // }
+  // var i = 0;
+  // var sum10 = 0;
+  // while (i < numberRange_line_10.length){
+  //   sum10 += numberRange_line_10[i];
+  //   i++;
+  // }
+
+
+  for(let j = 0; j < 10; j++){
+    // セルに各数値を表示する
+    if (numberRange_line[j].length > 0){
+      // 生成された数
+      document.getElementById("generateNumber_line_"+( j + 1)).innerHTML = numberRange_line[j];
+      // 最小値
+      document.getElementById("min_line_"+( j + 1)).innerHTML =Math.min.apply(null,numberRange_line[j]);
+      // 最大値
+      document.getElementById("max_line_"+( j + 1)).innerHTML =Math.max.apply(null,numberRange_line[j]);
+      // 個数
+      document.getElementById("length_"+( j + 1)).innerHTML =numberRange_line[j].length;
+      // 平均
+      document.getElementById("ave_"+( j + 1)).innerHTML =(Math.floor(sum[j] /numberRange_line[j].length));
+      // 合計
+      document.getElementById("sum_"+( j + 1)).innerHTML =sum[j];
+    } else {
+      // 配列が空の時に””を表示する処理
+      document.getElementById("generateNumber_line_"+( j + 1)).innerHTML ="";
+      document.getElementById("min_line_"+( j + 1)).innerHTML ="";
+      document.getElementById("max_line_"+( j + 1)).innerHTML ="";
+      document.getElementById("length_"+( j + 1)).innerHTML ="";
+      document.getElementById("ave_"+( j + 1)).innerHTML ="";
+      document.getElementById("sum_"+( j + 1)).innerHTML ="";
+    }
+  }
+
   // if (numberRange_line_2.length > 0){
   //   document.getElementById("generateNumber_line_2").innerHTML = numberRange_line_2;
   //   document.getElementById("min_line_2").innerHTML =Math.min.apply(null,numberRange_line_2);
