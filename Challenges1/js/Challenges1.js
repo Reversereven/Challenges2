@@ -170,6 +170,8 @@ document.getElementById("button").onclick = function() {
     i++;
   }
 
+  console.log(numberRange_line_1);
+
   var generateNumbers = [
     [],
     [],
@@ -184,13 +186,18 @@ document.getElementById("button").onclick = function() {
   ];
 
   var j = 0;
+  console.log("j", j);
 
-  while ( j > 10){
-    generateNumbers[j].concat("numberRange_line_"+ j + 1);
+  while ( j < 10){
+  console.log("j", j);
+  var a = "numberRange_line_" + ( j + 1 );
+  generateNumbers[j].concat(a);
+  console.log(a);
     j++;
   }
-
+  console.log("j", j);
   console.log(generateNumbers);
+
 
 
   // // セルに各数値を表示する
