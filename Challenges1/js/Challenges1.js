@@ -107,6 +107,7 @@ document.getElementById("button").onclick = function() {
     return (element <= 99);
   })
 
+  // 行ごとに作成した配列を多次元配列でまとめる
   const numberRange_line = [
     numberRange_line_1,numberRange_line_2,
     numberRange_line_3,numberRange_line_4,
@@ -117,86 +118,20 @@ document.getElementById("button").onclick = function() {
 
   console.log(numberRange_line);
 
-  const sum_line = [
-    [],[],[],[],[],[],[],[],[],[]
-  ]
-
-  var sum = 0;
-  var a = 0;
-
-  for (var i = 0; i < 10; i++){
-    while (a < numberRange_line[i].length){
-      sum += numberRange_line[i][a];
-      console.log(sum);
-      a++;
+  // 多次元配列numberRange_lineの各配列の要素を合計した値を配列sumに追加する
+  const sum = [];
+  for (let i = 0; i < 10; i++){
+    if (numberRange_line[i].length > 0){
+      var result =  numberRange_line[i].reduce(function(a, b) {
+        return a + b;
+       }, 0);
+      sum.push(result);
+    }else{
+      sum.push("");
     }
-    sum_line[i].push(sum);
   }
 
-  //
-  //
-  //
-  // // 行ごとに新しく作られた配列の中身をwhile文で合計する
-  // var i = 0;
-  // var sum1 = 0;
-  // while (i < numberRange_line_1.length){
-  //   sum1 += numberRange_line_1[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum2 = 0;
-  // while (i < numberRange_line_2.length){
-  //   sum2 += numberRange_line_2[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum3 = 0;
-  // while (i < numberRange_line_3.length){
-  //   sum3 += numberRange_line_3[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum4 = 0;
-  // while (i < numberRange_line_4.length){
-  //   sum4 += numberRange_line_4[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum5 = 0;
-  // while (i < numberRange_line_5.length){
-  //   sum5 += numberRange_line_5[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum6 = 0;
-  // while (i < numberRange_line_6.length){
-  //   sum6 += numberRange_line_6[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum7 = 0;
-  // while (i < numberRange_line_7.length){
-  //   sum7 += numberRange_line_7[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum8 = 0;
-  // while (i < numberRange_line_8.length){
-  //   sum8 += numberRange_line_8[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum9 = 0;
-  // while (i < numberRange_line_9.length){
-  //   sum9 += numberRange_line_9[i];
-  //   i++;
-  // }
-  // var i = 0;
-  // var sum10 = 0;
-  // while (i < numberRange_line_10.length){
-  //   sum10 += numberRange_line_10[i];
-  //   i++;
-  // }
+  console.log(sum);
 
 
   for(let j = 0; j < 10; j++){
@@ -224,145 +159,5 @@ document.getElementById("button").onclick = function() {
       document.getElementById("sum_"+( j + 1)).innerHTML ="";
     }
   }
-
-  // if (numberRange_line_2.length > 0){
-  //   document.getElementById("generateNumber_line_2").innerHTML = numberRange_line_2;
-  //   document.getElementById("min_line_2").innerHTML =Math.min.apply(null,numberRange_line_2);
-  //   document.getElementById("max_line_2").innerHTML =Math.max.apply(null,numberRange_line_2);
-  //   document.getElementById("length_2").innerHTML =numberRange_line_2.length;
-  //   document.getElementById("ave_2").innerHTML =(Math.floor(sum2 /numberRange_line_2.length));
-  //   document.getElementById("sum_2").innerHTML =sum2;
-  // } else {
-  //   document.getElementById("generateNumber_line_2").innerHTML ="";
-  //   document.getElementById("min_line_2").innerHTML ="";
-  //   document.getElementById("max_line_2").innerHTML ="";
-  //   document.getElementById("length_2").innerHTML ="";
-  //   document.getElementById("ave_2").innerHTML ="";
-  //   document.getElementById("sum_2").innerHTML ="";
-  // }
-  //
-  // if (numberRange_line_3.length > 0){
-  //   document.getElementById("generateNumber_line_3").innerHTML = numberRange_line_3;
-  //   document.getElementById("min_line_3").innerHTML =Math.min.apply(null,numberRange_line_3);
-  //   document.getElementById("max_line_3").innerHTML =Math.max.apply(null,numberRange_line_3);
-  //   document.getElementById("length_3").innerHTML =numberRange_line_3.length;
-  //   document.getElementById("ave_3").innerHTML =(Math.floor(sum3 /numberRange_line_3.length));
-  //   document.getElementById("sum_3").innerHTML =sum3;
-  // } else {
-  //   document.getElementById("generateNumber_line_3").innerHTML ="";
-  //   document.getElementById("min_line_3").innerHTML ="";
-  //   document.getElementById("max_line_3").innerHTML ="";
-  //   document.getElementById("length_3").innerHTML ="";
-  //   document.getElementById("ave_3").innerHTML ="";
-  //   document.getElementById("sum_3").innerHTML ="";
-  // }
-  //
-  // if (numberRange_line_4.length > 0){
-  //   document.getElementById("generateNumber_line_4").innerHTML = numberRange_line_4;
-  //   document.getElementById("min_line_4").innerHTML =Math.min.apply(null,numberRange_line_4);
-  //   document.getElementById("max_line_4").innerHTML =Math.max.apply(null,numberRange_line_4);
-  //   document.getElementById("length_4").innerHTML =numberRange_line_4.length;
-  //   document.getElementById("ave_4").innerHTML =(Math.floor(sum4 /numberRange_line_4.length));
-  //   document.getElementById("sum_4").innerHTML =sum4;
-  // } else {
-  //   document.getElementById("generateNumber_line_4").innerHTML ="";
-  //   document.getElementById("min_line_4").innerHTML ="";
-  //   document.getElementById("max_line_4").innerHTML ="";
-  //   document.getElementById("length_4").innerHTML ="";
-  //   document.getElementById("ave_4").innerHTML ="";
-  //   document.getElementById("sum_4").innerHTML ="";
-  // }
-  //
-  // if (numberRange_line_5.length > 0){
-  //   document.getElementById("generateNumber_line_5").innerHTML = numberRange_line_5;
-  //   document.getElementById("min_line_5").innerHTML =Math.min.apply(null,numberRange_line_5);
-  //   document.getElementById("max_line_5").innerHTML =Math.max.apply(null,numberRange_line_5);
-  //   document.getElementById("length_5").innerHTML =numberRange_line_5.length;
-  //   document.getElementById("ave_5").innerHTML =(Math.floor(sum5 /numberRange_line_5.length));
-  //   document.getElementById("sum_5").innerHTML =sum5;
-  // } else {
-  //   document.getElementById("generateNumber_line_5").innerHTML ="";
-  //   document.getElementById("min_line_5").innerHTML ="";
-  //   document.getElementById("max_line_5").innerHTML ="";
-  //   document.getElementById("length_5").innerHTML ="";
-  //   document.getElementById("ave_5").innerHTML ="";
-  //   document.getElementById("sum_5").innerHTML ="";
-  // }
-  // if (numberRange_line_6.length > 0){
-  //   document.getElementById("generateNumber_line_6").innerHTML = numberRange_line_6;
-  //   document.getElementById("min_line_6").innerHTML =Math.min.apply(null,numberRange_line_6);
-  //   document.getElementById("max_line_6").innerHTML =Math.max.apply(null,numberRange_line_6);
-  //   document.getElementById("length_6").innerHTML =numberRange_line_6.length;
-  //   document.getElementById("ave_6").innerHTML =(Math.floor(sum6 /numberRange_line_6.length));
-  //   document.getElementById("sum_6").innerHTML =sum6;
-  // } else {
-  //   document.getElementById("generateNumber_line_6").innerHTML ="";
-  //   document.getElementById("min_line_6").innerHTML ="";
-  //   document.getElementById("max_line_6").innerHTML ="";
-  //   document.getElementById("length_6").innerHTML ="";
-  //   document.getElementById("ave_6").innerHTML ="";
-  //   document.getElementById("sum_6").innerHTML ="";
-  // }
-  // if (numberRange_line_7.length > 0){
-  //   document.getElementById("generateNumber_line_7").innerHTML = numberRange_line_7;
-  //   document.getElementById("min_line_7").innerHTML =Math.min.apply(null,numberRange_line_7);
-  //   document.getElementById("max_line_7").innerHTML =Math.max.apply(null,numberRange_line_7);
-  //   document.getElementById("length_7").innerHTML =numberRange_line_7.length;
-  //   document.getElementById("ave_7").innerHTML =(Math.floor(sum7 /numberRange_line_7.length));
-  //   document.getElementById("sum_7").innerHTML =sum7;
-  // } else {
-  //   document.getElementById("generateNumber_line_7").innerHTML ="";
-  //   document.getElementById("min_line_7").innerHTML ="";
-  //   document.getElementById("max_line_7").innerHTML ="";
-  //   document.getElementById("length_7").innerHTML ="";
-  //   document.getElementById("ave_7").innerHTML ="";
-  //   document.getElementById("sum_7").innerHTML ="";
-  // }
-  // if (numberRange_line_8.length > 0){
-  //   document.getElementById("generateNumber_line_8").innerHTML = numberRange_line_8;
-  //   document.getElementById("min_line_8").innerHTML =Math.min.apply(null,numberRange_line_8);
-  //   document.getElementById("max_line_8").innerHTML =Math.max.apply(null,numberRange_line_8);
-  //   document.getElementById("length_8").innerHTML =numberRange_line_8.length;
-  //   document.getElementById("ave_8").innerHTML =(Math.floor(sum8 /numberRange_line_8.length));
-  //   document.getElementById("sum_8").innerHTML =sum8;
-  // } else {
-  //   document.getElementById("generateNumber_line_8").innerHTML ="";
-  //   document.getElementById("min_line_8").innerHTML ="";
-  //   document.getElementById("max_line_8").innerHTML ="";
-  //   document.getElementById("length_8").innerHTML ="";
-  //   document.getElementById("ave_8").innerHTML ="";
-  //   document.getElementById("sum_8").innerHTML ="";
-  // }
-  // if (numberRange_line_9.length > 0){
-  //   document.getElementById("generateNumber_line_9").innerHTML = numberRange_line_9;
-  //   document.getElementById("min_line_9").innerHTML =Math.min.apply(null,numberRange_line_9);
-  //   document.getElementById("max_line_9").innerHTML =Math.max.apply(null,numberRange_line_9);
-  //   document.getElementById("length_9").innerHTML =numberRange_line_9.length;
-  //   document.getElementById("ave_9").innerHTML =(Math.floor(sum9 /numberRange_line_9.length));
-  //   document.getElementById("sum_9").innerHTML =sum9;
-  // } else {
-  //   document.getElementById("generateNumber_line_9").innerHTML ="";
-  //   document.getElementById("min_line_9").innerHTML ="";
-  //   document.getElementById("max_line_9").innerHTML ="";
-  //   document.getElementById("length_9").innerHTML ="";
-  //   document.getElementById("ave_9").innerHTML ="";
-  //   document.getElementById("sum_9").innerHTML ="";
-  // }
-  // if (numberRange_line_10.length > 0){
-  //   document.getElementById("generateNumber_line_10").innerHTML = numberRange_line_10;
-  //   document.getElementById("min_line_10").innerHTML =Math.min.apply(null,numberRange_line_10);
-  //   document.getElementById("max_line_10").innerHTML =Math.max.apply(null,numberRange_line_10);
-  //   document.getElementById("length_10").innerHTML =numberRange_line_10.length;
-  //   document.getElementById("ave_10").innerHTML =(Math.floor(sum10 /numberRange_line_10.length));
-  //   document.getElementById("sum_10").innerHTML =sum10;
-  // } else {
-  //   document.getElementById("generateNumber_line_10").innerHTML ="";
-  //   document.getElementById("min_line_10").innerHTML ="";
-  //   document.getElementById("max_line_10").innerHTML ="";
-  //   document.getElementById("length_10").innerHTML ="";
-  //   document.getElementById("ave_10").innerHTML ="";
-  //   document.getElementById("sum_10").innerHTML ="";
-  // }
-  //
 
 };
