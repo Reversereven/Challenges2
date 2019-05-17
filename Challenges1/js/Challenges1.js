@@ -32,26 +32,22 @@ document.getElementById("button").onclick = function() {
     [],[],[],[],[],[],[],[],[],[],
   ];
 
-  var lowerlimit_line_2 = numbers.filter(function(element, index, array) {
-    return (element >= 1 * 10);
-  })
-  lowerlimit_line[1].concat(lowerlimit_line_2);
-console.log(lowerlimit_line_2);
 
 
- //
- //  console.log(lowerlimit_line);
- //
- //  for (let a = 0; a < 10; a++){
- //    console.log("a", a);
- //    var lowerlimit = numbers.filter(function(element, index, array) {
- //      return (element >= a * 10);
- //      lowerlimit_line.push(lowerlimit);
- //      console.log("a", a);
- //  })
- //
- // }
- //
+  console.log(lowerlimit_line);
+
+
+  for (var a = 0; a < 10; a++){
+    console.log(a);
+    var lowerlimit = numbers.filter(function(element, index, array) {
+      return (element >= a + 0);
+      console.log(lowerlimit);
+    })
+    for (var b = 0; b < lowerlimit.length; b++){
+      lowerlimit_line[a].push(lowerlimit[b]);
+    }
+  }
+
   console.log(lowerlimit_line);
 
 
