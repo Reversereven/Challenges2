@@ -29,34 +29,23 @@ document.getElementById("button").onclick = function() {
   console.log(numbers);
 
   // 要素の数10の二次元配列を作成する
-  const lowerlimit_line =[
-    [],[],[],[],[],[],[],[],[],[],
-  ];
   const numberRange_line =[
     [],[],[],[],[],[],[],[],[],[],
   ];
 
   // filterで指定した範囲ごとに作成した配列をそれぞれの二次元配列に入れる
   for (var a = 0; a < 10; a++){
-    var lowerlimit = numbers.filter(function(element, index, array) {
-      return (element >= a*10);
+    var numberRange = numbers.filter(function(element, index, array) {
+      return (element >= a*10 && element <= a*10 + 9);
     })
-    for (var b = 0; b < lowerlimit.length; b++){
-      lowerlimit_line[a].push(lowerlimit[b]);
+    for (var b = 0; b < numberRange.length; b++){
+      numberRange_line[a].push(numberRange[b]);
     }
   }
 
-  for (var c = 0; c < 10; c++){
-    var numberRange = lowerlimit_line[c].filter(function(element, index, array) {
-      return (element <= c*10 + 9);
-    })
-    for (var d = 0; d < numberRange.length; d++){
-      numberRange_line[c].push(numberRange[d]);
-    }
-  }
-
-  console.log(lowerlimit_line);
   console.log(numberRange_line);
+
+
 
   // 多次元配列numberRange_lineの各配列の要素を合計した値を配列sumに追加する
   const sum = [];
