@@ -45,43 +45,69 @@ document.getElementById("button").onclick = function() {
 
   console.log(numberRange_line);
 
+  //列ごとの配列を作る
+  const line ={
+    number: [],
+    min: [],
+    max: [],
+    length: [],
+    average: [],
+    sum: [],
+    }
 
-
-  // 多次元配列numberRange_lineの各配列の要素を合計した値を配列sumに追加する
-  const sum = [];
+  // 多次元配列numberRange_lineの各配列の要素を合計した値をline.sumに追加する
+  // const sum = [];
   for (let i = 0; i < 10; i++){
     if (numberRange_line[i].length > 0){
       var result =  numberRange_line[i].reduce(function(a, b) {
         return a + b;
        }, 0);
-      sum.push(result);
+      line.sum.push(result);
     }else{
-      sum.push("");
+      line.sum.push("");
     }
   }
 
-  console.log(sum);
-
+  // lineの各配列に数値を入れる
   for(let j = 0; j < 10; j++){
-    // セルに各数値を表示する
+
     if (numberRange_line[j].length > 0){
       // 生成された数
-      document.getElementById("generateNumber_line_"+j).innerHTML = numberRange_line[j];
+      line.number.push(numberRange_line[j]);
       // 最小値
-      document.getElementById("min_line_"+j).innerHTML =Math.min.apply(null,numberRange_line[j]);
+      line.min.push(Math.min.apply(null,numberRange_line[j]));
       // 最大値
-      document.getElementById("max_line_"+j).innerHTML =Math.max.apply(null,numberRange_line[j]);
+      line.max.push(Math.max.apply(null,numberRange_line[j]));
       // 個数
-      document.getElementById("length_"+j).innerHTML =numberRange_line[j].length;
+      line.length.push(numberRange_line[j].length);
       // 平均
-      document.getElementById("ave_"+j).innerHTML =(Math.floor(sum[j] /numberRange_line[j].length));
-      // 合計
-      document.getElementById("sum_"+j).innerHTML =sum[j];
+      line.average.push((Math.floor(line.sum[j] /numberRange_line[j].length)));
+
     } else {
       // 配列が空の時に””を表示する処理
-      document.getElementById("generateNumber_line_"+j).innerHTML ="";
-      document.getElementById("min_line_"+j).innerHTML ="";
-      document.getElementById("max_line_"+j).innerHTML ="";
+      line.number.push("");
+      line.min.push("");
+      line.max.push("");
+      line.length.push("");
+      line.average.push("");
+    }
+  }
+
+  console.log(line);
+
+  // セルに各数値を表示する
+  for(let j = 0; j < 10; j++){
+    if (numberRange_line[j].length > 0){
+      document.getElementById("generateNumber_"+j).innerHTML = line.number[j];
+      document.getElementById("min_"+j).innerHTML =line.min[j];
+      document.getElementById("max_"+j).innerHTML =line.max[j];
+      document.getElementById("length_"+j).innerHTML =line.length[j];
+      document.getElementById("ave_"+j).innerHTML =line.average[j];
+      document.getElementById("sum_"+j).innerHTML =line.sum[j];
+    } else {
+      document.getElementById("generateNumber_"+j).innerHTML ="";
+      document.getElementById("min_"+j).innerHTML ="";
+      document.getElementById("max_"+j).innerHTML ="";
       document.getElementById("length_"+j).innerHTML ="";
       document.getElementById("ave_"+j).innerHTML ="";
       document.getElementById("sum_"+j).innerHTML ="";
