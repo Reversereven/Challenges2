@@ -45,19 +45,7 @@ document.getElementById("button").onclick = function() {
 
   console.log(numberRange_line);
 
-  //列ごとの配列を作る
-  // var line ={
-  //   number: [],
-  //   min:{},
-  //   max:{},
-  //   length:{},
-  //   average:{},
-  //   sum:{},
-  // }
-  //
-  //   console.log(line);
-
-  // 多次元配列numberRange_lineの各配列の要素を合計した値をline.sumに追加する
+  // // 多次元配列numberRange_lineの各配列の要素を合計した値をline.sumに追加する
   // const sum = [];
   // for (let i = 0; i < 10; i++){
   //   if (numberRange_line[i].length > 0){
@@ -70,33 +58,36 @@ document.getElementById("button").onclick = function() {
   //   }
   // }
 
-  for (let c = 0; c < 10; c++){
-    if (numberRange_line[c].length > 0){
+  var line ={
+    number: [],
+    min: 0,
+    max: 0,
+    length: 0,
+    average: 0,
+    sum: 0,
+  }
 
-    var line ={
-      number: [],
-      min:{},
-      max:{},
-      length:{},
-      average:{},
-      sum:{},
-    }
-    
+console.log(line);
+
+  for (let c = 0; c < 10; c++){
+
+    if (numberRange_line[c].length > 0){
       var result =  numberRange_line[c].reduce(function(a, b) {
       return a + b;
      }, 0);
-      line.sum.push(result);
-      line.number.push(numberRange_line[c]);
-      line.min.push(Math.min.apply(null,numberRange_line[c]));
-      line.max.push(Math.max.apply(null,numberRange_line[c]));
-      line.length.push(numberRange_line[c].length);
-      line.average.push(Math.floor(line.sum /numberRange_line[c].length));
+      line.sum = result;
+      line.number = numberRange_line[c];
+      line.min = Math.min.apply(null,numberRange_line[c]);
+      line.max = Math.max.apply(null,numberRange_line[c]);
+      line.length = numberRange_line[c].length;
+      line.average = Math.floor(line.sum /numberRange_line[c].length);
     }else{
-      line.number.push("");
-      line.min.push("");
-      line.max.push("");
-      line.length.push("");
-      line.average.push("");
+      line.sum = "";
+      line.number = "";
+      line.min = "";
+      line.max = "";
+      line.length = "";
+      line.average = "";
     }
     document.getElementById("generateNumber_"+c).innerHTML = line.number;
     document.getElementById("min_"+c).innerHTML =line.min;
@@ -107,7 +98,6 @@ document.getElementById("button").onclick = function() {
 
     console.log(line);
   }
-
 
 
   //
@@ -156,5 +146,6 @@ document.getElementById("button").onclick = function() {
   //     document.getElementById("sum_"+j).innerHTML ="";
   //   }
   // }
+
 
 };
