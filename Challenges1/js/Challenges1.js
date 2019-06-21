@@ -58,46 +58,72 @@ document.getElementById("button").onclick = function() {
   //   }
   // }
 
-  var line ={
-    number: [],
-    min: 0,
-    max: 0,
-    length: 0,
-    average: 0,
-    sum: 0,
-  }
-
-console.log(line);
+const table =[];
 
   for (let c = 0; c < 10; c++){
+   if (numberRange_line[c].length > 0){
+     var result =  numberRange_line[c].reduce(function(a, b) {
+     return a + b;
+    }, 0);
 
-    if (numberRange_line[c].length > 0){
-      var result =  numberRange_line[c].reduce(function(a, b) {
-      return a + b;
-     }, 0);
-      line.sum = result;
-      line.number = numberRange_line[c];
-      line.min = Math.min.apply(null,numberRange_line[c]);
-      line.max = Math.max.apply(null,numberRange_line[c]);
-      line.length = numberRange_line[c].length;
-      line.average = Math.floor(line.sum /numberRange_line[c].length);
-    }else{
-      line.sum = "";
-      line.number = "";
-      line.min = "";
-      line.max = "";
-      line.length = "";
-      line.average = "";
-    }
-    document.getElementById("generateNumber_"+c).innerHTML = line.number;
-    document.getElementById("min_"+c).innerHTML =line.min;
-    document.getElementById("max_"+c).innerHTML =line.max;
-    document.getElementById("length_"+c).innerHTML =line.length;
-    document.getElementById("ave_"+c).innerHTML =line.average;
-    document.getElementById("sum_"+c).innerHTML =line.sum;
+     var line ={
+       number: numberRange_line[c],
+       min: Math.min.apply(null,numberRange_line[c]),
+       max: Math.max.apply(null,numberRange_line[c]),
+       length: numberRange_line[c].length,
+       sum: result,
+       average: Math.floor( result/numberRange_line[c].length),
+     }
+     table.push(line);
+   }else{
+     table.push("");
+   }
+ }
 
-    console.log(line);
+console.log(table);
+
+for (let d = 0; d < 10; d++){
+  if (numberRange_line[d].length > 0){
+    document.getElementById("generateNumber_"+d).innerHTML = table[d].number;
+    document.getElementById("min_"+d).innerHTML =table[d].min;
+    document.getElementById("max_"+d).innerHTML =table[d].max;
+    document.getElementById("length_"+d).innerHTML =table[d].length;
+    document.getElementById("ave_"+d).innerHTML =table[d].average;
+    document.getElementById("sum_"+d).innerHTML =table[d].sum;
   }
+}
+
+
+  // for (let c = 0; c < 10; c++){
+  //
+  //   if (numberRange_line[c].length > 0){
+  //     var result =  numberRange_line[c].reduce(function(a, b) {
+  //     return a + b;
+  //    }, 0);
+  //     line.sum = result;
+  //     line.number = numberRange_line[c];
+  //     line.min = Math.min.apply(null,numberRange_line[c]);
+  //     line.max = Math.max.apply(null,numberRange_line[c]);
+  //     line.length = numberRange_line[c].length;
+  //     line.average = Math.floor(line.sum /numberRange_line[c].length);
+  //   }else{
+  //     line.sum = "";
+  //     line.number = "";
+  //     line.min = "";
+  //     line.max = "";
+  //     line.length = "";
+  //     line.average = "";
+  //   }
+  //
+  //   document.getElementById("generateNumber_"+c).innerHTML = line.number;
+  //   document.getElementById("min_"+c).innerHTML =line.min;
+  //   document.getElementById("max_"+c).innerHTML =line.max;
+  //   document.getElementById("length_"+c).innerHTML =line.length;
+  //   document.getElementById("ave_"+c).innerHTML =line.average;
+  //   document.getElementById("sum_"+c).innerHTML =line.sum;
+  //
+  //   console.log(line);
+  // }
 
 
   //
