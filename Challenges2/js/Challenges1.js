@@ -36,8 +36,6 @@ attack.onclick = function(){
 　// 自分と敵の得点を比較して低い方のライフを減らす
   if (score > enemy_score) {
     enemy_life -= 1;
-    enemy_HP.removeChild("enemy_HP_"+a);
-    ++a;
   } else if (score < enemy_score) {
     life -= 1;
   } else {
