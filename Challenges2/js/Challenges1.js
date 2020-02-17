@@ -5,6 +5,8 @@
 let attack = document.getElementById("btn");
 let you_life = 5;
 let enemy_life = 5;
+let a = 1;
+let b = 1;
 
 
 attack.onclick = function(){
@@ -30,14 +32,15 @@ attack.onclick = function(){
   const you_HP =document.getElementById("you_life");
   const enemy_HP =document.getElementById("enemy_life");
 
-  let a = 1;
-  let b = 1;
-
 　// 自分と敵の得点を比較して低い方のライフを減らす
   if (you_score > enemy_score) {
     enemy_life -= 1;
+    document.getElementById("enemy_HP_"+a).src="img/lost_HP.png";
+    ++a;
   } else if (you_score < enemy_score) {
     you_life -= 1;
+    document.getElementById("you_HP_"+b).src="img/lost_HP.png";
+    ++b;
   } else {
     ;
   }
