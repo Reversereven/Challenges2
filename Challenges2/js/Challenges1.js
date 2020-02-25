@@ -2,30 +2,74 @@
 'use strict';
 
 
-let attack = document.getElementById("btn");
+let battle = document.getElementById("battle");
 let you_life = 5;
 let enemy_life = 5;
 let a = 1;
 let b = 1;
+let c = 0;
+let d = 0;
+
+let addTwo = document.getElementById("add+2");
+let subtractTwo = document.getElementById("subtract-2");
+
+let e = true;
+let f = true;
 
 
-attack.onclick = function(){
+// eがtrueの時、自分の得点に+2する。falseの場合trueの処理を取り消す
+addTwo.onclick = function(){
+  if(e == true){
+  c += 2;
+  e = false;
+  console.log(c);
+} else {
+  c -= 2;
+  e = true;
+  console.log(c);
+}
+
+}
+
+subtractTwo.onclick = function(){
+  if(f == true){
+  d -= 2;
+  f = false;
+  console.log(d);
+} else {
+  d += 2;
+  f = true;
+  console.log(d);
+}
+
+}
+
+
+battle.onclick = function(){
 
   // 2D6を2回振って、自分と敵の得点を出す
   let dice1 =Math.floor(Math.random()*6+1);
   let dice2 =Math.floor(Math.random()*6+1);
   let you_score =parseInt(dice1) + parseInt(dice2);
 
+  // console.log(you_score);
+
+  you_score += c;
+
   let dice3 =Math.floor(Math.random()*6+1);
   let dice4 =Math.floor(Math.random()*6+1);
   let enemy_score =parseInt(dice3) + parseInt(dice4);
 
-  console.log(dice1);
-  console.log(dice2);
+  console.log(enemy_score);
+
+  enemy_score += d;
+
+  // console.log(dice1);
+  // console.log(dice2);
   console.log(you_score);
 
-  console.log(dice3);
-  console.log(dice4);
+  // console.log(dice3);
+  // console.log(dice4);
   console.log(enemy_score);
 
 
@@ -45,8 +89,8 @@ attack.onclick = function(){
     ;
   }
 
-  console.log(you_life);
-  console.log(enemy_life);
+  // console.log(you_life);
+  // console.log(enemy_life);
 
 
 // どちらかのlifeが0になったら勝敗をalertで表示する
@@ -57,5 +101,9 @@ if (you_life <= 0) {
 } else {
   ;
 }
+
+c = 0;
+d = 0;
+console.log(c);
 
 }
