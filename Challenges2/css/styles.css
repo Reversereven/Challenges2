@@ -1,13 +1,52 @@
 @charset "UTF-8";
 
 body {
-  background-color: white;
+  background-color: #DDFFFF;
+  width: 1024px;
+  height: 768px;
+  margin-right: auto;
+  margin-left : auto;
 }
 
+header {
+  background-color: white;
+  height: 120px;
+}
 
+#life_counter {
+  display:flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-.btn {
-  margin-left: 20px;
-  margin-top: 10px;
+/* #you_life {
+  margin-top: 70px;
+  margin-bottom: 5px;
+}
 
+#enemy_life {
+  margin-top: 70px;
+  margin-bottom: 0px;
+} */
+
+#VS {
+  margin: 16px 20px 5px;
+}
+
+#hand {
+  height: 150px;
+  width: 1024px;
+}
+
+#battle-button {
+  text-align: center;
+      margin: 10px;
+}
+
+#battle {
+  padding: 10px 50px;
+}
+
+.card-icon {
+  padding: 60px 25px 0px 25px;;
 }

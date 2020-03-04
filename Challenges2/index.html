@@ -6,28 +6,39 @@
       <title>課題</title>
 </head>
 <body>
+  <header>
+
+　　<div id="life_counter">
+     <p>あなた</p>
+     
+     <div id="you_life">
+       <img src="img/you_HP.png" id="you_HP_5">
+       <img src="img/you_HP.png" id="you_HP_4">
+       <img src="img/you_HP.png" id="you_HP_3">
+       <img src="img/you_HP.png" id="you_HP_2">
+       <img src="img/you_HP.png" id="you_HP_1">
+     </div>
+
+     <p id="VS">VS</p>
+
+     <div id="enemy_life">
+       <img src="img/enemy_HP.png" id="enemy_HP_5">
+       <img src="img/enemy_HP.png" id="enemy_HP_4">
+       <img src="img/enemy_HP.png" id="enemy_HP_3">
+       <img src="img/enemy_HP.png" id="enemy_HP_2">
+       <img src="img/enemy_HP.png" id="enemy_HP_1">
+     </div>
+　　</div>
+
+  </header>
 
 
-  <p><button id="battle" class="btn">バトル</button></p>
-  <div id="you_life">
-    <img src="img/you_HP.png" id="you_HP_5">
-    <img src="img/you_HP.png" id="you_HP_4">
-    <img src="img/you_HP.png" id="you_HP_3">
-    <img src="img/you_HP.png" id="you_HP_2">
-    <img src="img/you_HP.png" id="you_HP_1">
-  </div>
+  <div id="battle-button"><button id="battle">バトル</button></div>
 
-  <div id="enemy_life">
-    <img src="img/enemy_HP.png" id="enemy_HP_5">
-    <img src="img/enemy_HP.png" id="enemy_HP_4">
-    <img src="img/enemy_HP.png" id="enemy_HP_3">
-    <img src="img/enemy_HP.png" id="enemy_HP_2">
-    <img src="img/enemy_HP.png" id="enemy_HP_1">
-  </div>
 
-  <p>
-    <button id="add+2" class="btn">+２</button>
-    <button id="subtract-2" class="btn">-２</button>
+  <p id="hand">
+    <button id="add+2" class="card-icon">+２</button>
+    <button id="subtract-2" class="card-icon">-２</button>
   </p>
 
   <script src="js/Challenges1.js"></script>
