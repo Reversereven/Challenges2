@@ -12,36 +12,52 @@ let d = 0;
 
 let addTwo = document.getElementById("add+2");
 let subtractTwo = document.getElementById("subtract-2");
+let mpAddTwo = document.getElementById("magicPoint+2");
 
 let e = true;
 let f = true;
+let g = true;
+
+let magicPoint = 0;
 
 
 // eがtrueの時、自分の得点に+2する。falseの場合trueの処理を取り消す
 addTwo.onclick = function(){
-  if(e == true){
-  c += 2;
-  e = false;
-  console.log(c);
-} else {
-  c -= 2;
-  e = true;
-  console.log(c);
+   if(e == true){
+     c += 2;
+     e = false;
+     console.log(c);
+ } else {
+     c -= 2;
+     e = true;
+     console.log(c);
+ }
 }
 
-}
-
+// fがtrueの時、敵の得点に-2する。falseの場合trueの処理を取り消す
 subtractTwo.onclick = function(){
-  if(f == true){
-  d -= 2;
-  f = false;
-  console.log(d);
-} else {
-  d += 2;
-  f = true;
-  console.log(d);
+   if(f == true){
+     d -= 2;
+     f = false;
+     console.log(d);
+ } else {
+     d += 2;
+     f = true;
+     console.log(d);
+ }
 }
 
+//gがtrueの時、自分のＭＰに+2する。falseの場合trueの処理を取り消す
+mpAddTwo.onclick = function(){
+   if(g == true){
+     magicPoint += 2;
+     g = false;
+     console.log(magicPoint);
+ } else {
+     magicPoint -= 2;
+     g = true;
+     console.log(magicPoint);
+ }
 }
 
 
